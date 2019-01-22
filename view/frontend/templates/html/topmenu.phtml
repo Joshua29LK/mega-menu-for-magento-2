@@ -1,0 +1,46 @@
+<?php
+/**
+ * BSS Commerce Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://bsscommerce.com/Bss-Commerce-License.txt
+ *
+ * @category   BSS
+ * @package    Bss_MegaMenu
+ * @author     Extension Team
+ * @copyright  Copyright (c) 2016-2017 BSS Commerce Co. ( http://bsscommerce.com )
+ * @license    http://bsscommerce.com/Bss-Commerce-License.txt
+ */
+?>
+<?php
+/**
+ * Top menu for store
+ *
+ * @var $block Bss\Megamenu\Block\Html\Menu
+ */
+?>
+<?php $columnsLimit = $block->getColumnsLimit() ?: 0; ?>
+<?php $_menu = $block->getHtml('level-top', 'submenu', $columnsLimit) ?>
+
+<?php
+$helper = $block->getHelperData();
+?>
+<?php if ($helper->getConfig('enable') == 1) : ?>
+    <nav class="bss-megamenu navigation" role="navigation" data-action="navigation">
+        <div id="defaultmenu" class="navbar-collapse collapse"> 
+            <ul class="nav navbar-nav" data-mage-init='{"menu":{"responsive":true, "expanded":true, "position":{"my":"left top","at":"left bottom"}}}'>
+                <?php if($helper->getConfig('enable_home') == 1) : ?>
+                    <li class="level0 <?php echo $helper->isHomeUrl() ? 'active' : "" ?> level-top ui-menu-item" >
+                        <a class="level-top ui-corner-all" href="<?php echo $this->getBaseUrl() ?>" ><span><?php echo __("Home") ?></span></a>
+                    </li>
+                <?php endif ?>
+                <?php /* @escapeNotVerified */ echo $_menu; ?>
+                <?php /* @escapeNotVerified */ echo $block->getChildHtml(); ?>
+            </ul>
+        </div>
+    </nav>
+<?php endif; ?>

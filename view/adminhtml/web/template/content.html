@@ -1,0 +1,153 @@
+<form id="megamenu_content">
+
+	<div id="bss_notice"></div>
+
+	<input type="hidden" name="menu_id" data-bind="value: menuId" />
+	<input type="hidden" name="item_id" data-bind="value: itemId" />
+	<input type="hidden" name="store_id" data-bind="value: storeId"/>
+	<div class="section-config active">
+	<div class="entry-edit-head admin__collapsible-block" data-level="0" data-index="content">
+		<div class="fieldset-wrapper-title" tabindex="0">
+			<strong class="admin__collapsible-title">
+				<span data-bind="text: menuTitle"></span>
+				<span class="admin__page-nav-item-messages">
+					<span class="admin__page-nav-item-message _changed">
+						<span class="admin__page-nav-item-message-icon"></span>
+						<span data-bind="i18n: 'Changes have been made to this section that have not been saved.'" class="admin__page-nav-item-message-tooltip"></span>
+					</span>
+					<span class="admin__page-nav-item-message _error">
+						<span class="admin__page-nav-item-message-icon"></span>
+						<span data-bind="i18n: 'This tab contains invalid data. Please resolve this before saving.'" class="admin__page-nav-item-message-tooltip">.</span>
+					</span>
+					<span class="admin__page-nav-item-message-loader">
+						<span class="spinner">
+							<span data-repeat-index="0"></span><span data-repeat-index="1"></span><span data-repeat-index="2"></span><span data-repeat-index="3"></span><span data-repeat-index="4"></span><span data-repeat-index="5"></span><span data-repeat-index="6"></span><span data-repeat-index="7"></span>
+						</span>
+					</span>
+				</span>
+			</strong>
+		</div>
+	</div>
+	</div>
+	<fieldset class="admin__fieldset">
+		<div class="admin__field">
+			<label class="admin__field-label" for="megamenu_enable">
+				<span data-bind="i18n: 'Enable'"></span>
+			</label>
+			<div class="admin__field-control">
+				<select data-bind="options: enables , optionsText: 'title', optionsValue: 'id' , value: chosenEnable " class="admin__control-select" name="megamenu_enable" id="megamenu_enable" aria-describedby="notice-KAVG6BW">
+				</select>
+			</div>
+		</div>
+
+		<div class="admin__field bss_megamenu_type">
+			<label class="admin__field-label" for="megamenu_type">
+				<span data-bind="i18n: 'Menu Content Type'"></span>
+			</label>
+			<div class="admin__field-control">
+				<select data-bind="options: contentTypes , optionsText: 'title', optionsValue: 'id' , value: chosenContentType " class="admin__control-select" name="megamenu_type" id="megamenu_type" aria-describedby="notice-KAVG6BW">
+				</select>
+			</div>
+		</div>
+
+		<div class="admin__field">
+			<label class="admin__field-label" for="megamenu_menu_url_type">
+				<span data-bind="i18n: 'Menu Url Type'"></span>
+			</label>
+			<div class="admin__field-control">
+				<select data-bind="options: menuUrlType , optionsCaption: 'Please select', optionsText: 'title', optionsValue: 'id' , value: chosenMenuUrlType " class="admin__control-select" name="megamenu_menu_url_type" id="megamenu_menu_url_type" aria-describedby="notice-KAVG6BW">
+				</select>
+			</div>
+		</div>
+
+		<div class="admin__field bss_custom_link">
+			<label class="admin__field-label" for="custom_link">
+				<span  data-bind="i18n: 'Custom Link'"></span>
+			</label>
+			<div class="admin__field-control">
+				<input type="text" data-bind="value: customLink" name="custom_link" id="custom_link">
+			</div>
+		</div>
+
+		<div class="admin__field bss_category_link">
+			<label class="admin__field-label" for="megamenu_category_link">
+				<span data-bind="i18n: 'Category Link'"></span>
+			</label>
+			<div class="admin__field-control">
+				<select data-bind="options: categoriesLink , optionsCaption: 'Please select', optionsText: 'title', optionsValue: 'id' , value: chosenCategoriesLink " class="admin__control-select" name="megamenu_category_link" id="megamenu_category_link" aria-describedby="notice-KAVG6BW">
+				</select>
+			</div>
+		</div>
+
+		<div class="admin__field">
+			<label class="admin__field-label" for="megamenu_label_type">
+				<span data-bind="i18n: 'Label Type'"></span>
+			</label>
+			<div class="admin__field-control">
+				<select data-bind="options: labelTypes , optionsCaption: 'Please select type' , optionsText: 'title', optionsValue: 'id' , value: chosenLabelType " class="admin__control-select" name="megamenu_label_type" id="megamenu_label_type" aria-describedby="notice-KAVG6BW">
+				</select>
+			</div>
+		</div>
+
+		<div class="admin__field bss_content_block">
+			<label class="admin__field-label" for="megamenu_content_block">
+				<span data-bind="i18n: 'Content Block'"></span>
+			</label>
+			<div class="admin__field-control">
+				<select data-bind="options: static_blocks , optionsCaption: 'Please select block', optionsText: 'title', optionsValue: 'block_id' , value: chosenContentBlock " class="admin__control-select" name="megamenu_content_block" id="megamenu_content_block" aria-describedby="notice-KAVG6BW">
+				</select>
+			</div>
+		</div>
+
+		<div class="admin__field bss_content_top">
+			<label class="admin__field-label" for="megamenu_static_block_top">
+				<span data-bind="i18n: 'Top Static Block'"></span>
+			</label>
+			<div class="admin__field-control">
+				<select data-bind="options: static_blocks , optionsCaption: 'Please select block' , optionsText: 'title', optionsValue: 'block_id' , value: chosenBlockTop " class="admin__control-select" name="megamenu_static_block_top" id="megamenu_static_block_top">
+				</select>
+			</div>
+		</div>
+
+		<div class="admin__field bss_content_left">
+			<label class="admin__field-label" for="megamenu_static_block_left">
+				<span data-bind="i18n: 'Left Static Block'"></span>
+			</label>
+			<div class="admin__field-control">
+				<select data-bind="options: static_blocks , optionsCaption: 'Please select block' , optionsText: 'title', optionsValue: 'block_id' , value: chosenBlockLeft " class="admin__control-select" class="admin__control-select" name="megamenu_static_block_left" id="megamenu_static_block_left" aria-describedby="notice-KAVG6BW">
+				</select>
+			</div>
+		</div>
+
+		<div class="admin__field bss_content_right">
+			<label class="admin__field-label" for="megamenu_static_block_right">
+				<span data-bind="i18n: 'Right Static Block'"></span>
+			</label>
+			<div class="admin__field-control">
+				<select data-bind="options: static_blocks , optionsCaption: 'Please select block' , optionsText: 'title', optionsValue: 'block_id' , value: chosenBlockRight " class="admin__control-select" class="admin__control-select" name="megamenu_static_block_right" id="megamenu_static_block_right" aria-describedby="notice-KAVG6BW">
+				</select>
+			</div>
+		</div>
+
+		<div class="admin__field bss_content_bottom">
+			<label class="admin__field-label" for="megamenu_static_block_bottom">
+				<span data-bind="i18n: 'Bottom Static Block'"></span>
+			</label>
+			<div class="admin__field-control">
+				<select data-bind="options: static_blocks , optionsCaption: 'Please select block' , optionsText: 'title', optionsValue: 'block_id' , value: chosenBlockBottom " class="admin__control-select" class="admin__control-select" name="megamenu_static_block_bottom" id="megamenu_static_block_bottom" aria-describedby="notice-KAVG6BW">
+				</select>
+			</div>
+		</div>
+
+		<div class="admin__field bss_content_right"><label class="admin__field-label">
+			</label><div class="admin__field-control" data-bind="i18n: 'To create the best mega menu, please select Left Block and Right Block with suitable size. Read User Guide for more details!'"></div></div>
+
+	</fieldset>
+</form>
+
+
+<div data-role="spinner" data-component="category_form.category_form" class="admin__form-loading-mask megamenu-loading">
+	<div class="spinner">
+		<span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+	</div>
+</div>

@@ -1,0 +1,43 @@
+<?php
+/**
+ * BSS Commerce Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://bsscommerce.com/Bss-Commerce-License.txt
+ *
+ * @category   BSS
+ * @package    Bss_MegaMenu
+ * @author     Extension Team
+ * @copyright  Copyright (c) 2016-2017 BSS Commerce Co. ( http://bsscommerce.com )
+ * @license    http://bsscommerce.com/Bss-Commerce-License.txt
+ */
+?>
+
+<?php
+/**
+ * Top menu for store
+ *
+ * @var $block Bss\Megamenu\Block\Html\Menu
+ */
+?>
+
+<?php
+    $helper = $block->getHelperData();
+    $topMenuDefault = $block->getTopMenuDefault();
+?>
+<?php if ($helper->getConfig('enable') == 0) : ?>
+
+    <?php $columnsLimit = $topMenuDefault->getColumnsLimit() ?: 0; ?>
+    <?php $_menu = $topMenuDefault->getHtml('level-top', 'submenu', $columnsLimit) ?>
+
+    <nav class="navigation" data-action="navigation">
+        <ul data-mage-init='{"menu":{"responsive":true, "expanded":true, "position":{"my":"left top","at":"left bottom"}}}'>        
+            <?php /* @escapeNotVerified */ echo $_menu; ?>
+            <?php /* @escapeNotVerified */ echo $topMenuDefault->getChildHtml(); ?>
+        </ul>
+    </nav>
+<?php endif ?>
